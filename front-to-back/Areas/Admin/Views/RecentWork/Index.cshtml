@@ -1,0 +1,46 @@
+﻿@using front_to_back.Areas.Admin.ViewModels
+@model RecentWorkViewModel
+
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Categories</h4>
+                        <a class="btn btn-main" asp-action="create" asp-controller="recentwork" asp-area="admin">Create work component</a>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Title</th>
+                                        <th>Text</th>
+                                        <th>FilePath</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var components in Model.RecentWorkComponents)
+                                    {
+                                        <tr>
+                                            <td>@components.Id</td>
+                                            <td>@components.Title</td>
+                                            <td>@components.Text</td>
+                                            <td>@components.FilePath</td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
