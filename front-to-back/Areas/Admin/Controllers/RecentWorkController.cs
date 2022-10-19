@@ -47,6 +47,65 @@ namespace front_to_back.Areas.Admin.Controllers
             await _appDbContext.SaveChangesAsync();
             return RedirectToAction("index");
         }
+
+        [HttpGet]
+
+        public async Task<IActionResult> Update(int id)
+        {
+            var recentWorkComponent = await _appDbContext.RecentWorkComponents.FindAsync(id);
+            if(recentWorkComponent == null) return NotFound();
+            return View(recentWorkComponent);
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Update(int id,RecentWorkComponent recentWorkComponent)
+        {
+            if (!ModelState.IsValid) return View(recentWorkComponent);
+            if(id!=recentWorkComponent.Id) return BadRequest();
+            var dbrecentWorkComponent = await _appDbContext.RecentWorkComponents.FindAsync(id);
+            if(dbrecentWorkComponent == null) return NotFound();
+
+            bool isExist = await _appDbContext.RecentWorkComponents.
+                AnyAsync(rcw => rcw.Title.ToLower().Trim() == recentWorkComponent.Title.ToLower().Trim()&& rcw.Id!=recentWorkComponent.Id);
+            if (isExist)
+            {
+                ModelState.AddModelError("Title", "Bu adda artiq movcuddur");
+                return View(recentWorkComponent);
+            }
+            dbrecentWorkComponent.Title = recentWorkComponent.Title;
+            dbrecentWorkComponent.Text = recentWorkComponent.Text;
+            dbrecentWorkComponent.FilePath= recentWorkComponent.FilePath;
+            await _appDbContext.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var dbrecentWorkComponent = await _appDbContext.RecentWorkComponents.FindAsync(id);
+            if( dbrecentWorkComponent == null) return NotFound();
+            return View(dbrecentWorkComponent);
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteComponent(int id)
+        {
+            var dbrecentWorkComponent = await _appDbContext.RecentWorkComponents.FindAsync(id);
+            if (dbrecentWorkComponent == null) return NotFound();
+
+            _appDbContext.RecentWorkComponents.Remove(dbrecentWorkComponent);
+            await _appDbContext.SaveChangesAsync();
+            return RedirectToAction("Index");
+
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var dbrecentWorkComponent = await _appDbContext.RecentWorkComponents.FindAsync(id);
+            if (dbrecentWorkComponent == null) return NotFound();
+            return View(dbrecentWorkComponent);
+        }
     }
 }
 

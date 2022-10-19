@@ -43,5 +43,59 @@ namespace front_to_back.Areas.Admin.Controllers
             await _appDbContext.SaveChangesAsync();
             return RedirectToAction("index");
         }
+        [HttpGet]
+
+        public async Task<IActionResult> Update(int id)
+        {
+            var category = await _appDbContext.Categories.FindAsync(id);
+            if(category == null) return NotFound();
+            return View(category);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(int id,Category category)
+        {
+            if(!ModelState.IsValid) return View(category);
+            if(id!=category.Id) return BadRequest();
+            var dbcategory = await _appDbContext.Categories.FindAsync(id);
+           if(dbcategory == null) return NotFound();
+            bool isExist = await _appDbContext.Categories.AnyAsync(c=>c.Title.ToLower().Trim()==category.Title.ToLower().Trim()&&c.Id!=category.Id);
+            if (isExist)
+            {
+                ModelState.AddModelError("Title", "Bu adda category artiq movcuddur");
+                return View(category);
+            }
+            dbcategory.Title = category.Title;
+            await _appDbContext.SaveChangesAsync();
+            return RedirectToAction("index");
+        }
+        [HttpGet]
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var dbcategory = await _appDbContext.Categories.FindAsync(id);
+            if( dbcategory == null) return NotFound();
+
+            return View(dbcategory); 
+        }
+        [HttpPost]
+
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            var dbcategory = await _appDbContext.Categories.FindAsync(id);
+            if (dbcategory == null) return NotFound();
+             _appDbContext.Remove(dbcategory);
+            await _appDbContext.SaveChangesAsync();
+            return RedirectToAction("index");
+        }
+        [HttpGet]
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var dbcategory = await _appDbContext.Categories.FindAsync(id);
+            if (dbcategory == null) return NotFound();
+
+            return View(dbcategory);
+        }
     }
 }
