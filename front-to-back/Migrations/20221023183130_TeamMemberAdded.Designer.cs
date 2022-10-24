@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using front_to_back.DAL;
 
@@ -10,9 +11,10 @@ using front_to_back.DAL;
 namespace front_to_back.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221023183130_TeamMemberAdded")]
+    partial class TeamMemberAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,7 +70,7 @@ namespace front_to_back.Migrations
                     b.ToTable("CategoryComponents");
                 });
 
-            modelBuilder.Entity("front_to_back.Models.ContactBanner", b =>
+            modelBuilder.Entity("front_to_back.Models.ContractIntroComponent", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,11 +82,8 @@ namespace front_to_back.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FilePath")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhotoPath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -93,7 +92,7 @@ namespace front_to_back.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactBanners");
+                    b.ToTable("ContractIntroComponent");
                 });
 
             modelBuilder.Entity("front_to_back.Models.ObjectiveComponent", b =>
@@ -183,6 +182,7 @@ namespace front_to_back.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotoName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Position")

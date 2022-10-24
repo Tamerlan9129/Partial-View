@@ -15,11 +15,11 @@ namespace front_to_back.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var contractIntroComponent = await _appDbContext.ContractIntroComponent.FirstOrDefaultAsync();
+            var contractIntroComponent = await _appDbContext.ContactBanners.FirstOrDefaultAsync();
 
-            var model = new ContactIndexViewModel
+            var model = new ContactBannerIndexViewModel
             {
-                ContractIntroComponent = contractIntroComponent
+                ContactBanner = contractIntroComponent
             };
 
             return View(model);

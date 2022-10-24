@@ -1,16 +1,17 @@
 ﻿@using front_to_back.ViewModels.Contact;
-@model ContactIndexViewModel
+@model ContactBannerIndexViewModel
 
 <!-- Start Banner Hero -->
 <section class="bg-light">
     <div class="container py-4">
         <div class="row align-items-center justify-content-between">
             <div class="contact-header col-lg-4">
-                <h1 class="h2 pb-3 text-primary">@Model.ContractIntroComponent.Title</h1>
-                @Html.Raw(Model.ContractIntroComponent.Description)
+                <h1 class="h2 pb-3 text-primary">@Model.ContactBanner.Name</h1>
+                <h3 class="h4 regular-400">@Model.ContactBanner.Title</h3>
+                @Html.Raw(Model.ContactBanner.Description)
             </div>
             <div class="contact-img col-lg-5 align-items-end col-md-4">
-                <img src="@Model.ContractIntroComponent.FilePath">
+                <img src="~/assets/img/@Model.ContactBanner.PhotoPath">
             </div>
         </div>
     </div>

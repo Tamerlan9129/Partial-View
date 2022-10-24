@@ -4,30 +4,30 @@
 
 namespace front_to_back.Migrations
 {
-    public partial class ContractIntroComponentAdded : Migration
+    public partial class ObjectiveComponentAdd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ContractIntroComponent",
+                name: "ObjectiveComponents",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FilePath = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    IconTag = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ContractIntroComponent", x => x.Id);
+                    table.PrimaryKey("PK_ObjectiveComponents", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ContractIntroComponent");
+                name: "ObjectiveComponents");
         }
     }
 }

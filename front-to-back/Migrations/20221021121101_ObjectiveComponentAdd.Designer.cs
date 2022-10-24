@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using front_to_back.DAL;
 
@@ -10,9 +11,10 @@ using front_to_back.DAL;
 namespace front_to_back.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221021121101_ObjectiveComponentAdd")]
+    partial class ObjectiveComponentAdd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,7 +70,7 @@ namespace front_to_back.Migrations
                     b.ToTable("CategoryComponents");
                 });
 
-            modelBuilder.Entity("front_to_back.Models.ContactBanner", b =>
+            modelBuilder.Entity("front_to_back.Models.ContractIntroComponent", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,11 +82,8 @@ namespace front_to_back.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FilePath")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhotoPath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -93,7 +92,7 @@ namespace front_to_back.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactBanners");
+                    b.ToTable("ContractIntroComponent");
                 });
 
             modelBuilder.Entity("front_to_back.Models.ObjectiveComponent", b =>
@@ -168,34 +167,6 @@ namespace front_to_back.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("RecentWorkComponents");
-                });
-
-            modelBuilder.Entity("front_to_back.Models.TeamMember", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhotoName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Position")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TeamMembers");
                 });
 
             modelBuilder.Entity("front_to_back.Models.CategoryComponent", b =>

@@ -11,10 +11,14 @@ namespace front_to_back.DAL
         }
 
         public DbSet<RecentWorkComponent> RecentWorkComponents { get; set; }
-        public DbSet<ContractIntroComponent> ContractIntroComponent { get; set; }
+        public DbSet<ContactBanner> ContactBanners { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<CategoryComponent> CategoryComponents { get; set; }
 
         public DbSet<PricingComponent> PricingComponents { get; set; }
+
+        public DbSet<ObjectiveComponent> ObjectiveComponents { get; set; }
+
+        public DbSet <TeamMember> TeamMembers { get; set; }
     }
 }

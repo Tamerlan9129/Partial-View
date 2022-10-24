@@ -1,0 +1,56 @@
+﻿@using front_to_back.Areas.Admin.ViewModels
+@model BannerIndexViewModel
+
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Categories</h4>
+                        <a class="btn btn-primary" asp-action="create" asp-controller="contact" asp-area="admin">Create contact banner</a>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Photo</th>
+                                        <th>Name</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Actions</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var contactBanner in Model.ContactBanners)
+                                    {
+                                        <tr>
+                                            <td>@contactBanner.Id</td>
+                                            <td><img src="~/assets/img/@contactBanner.PhotoPath" /></td>
+                                            <td>@contactBanner.Name</td>
+                                            <td>@contactBanner.Title</td>
+                                            <td>@contactBanner.Description</td>
+                                            <td>
+                                                <a asp-action="update" asp-controller="contact" asp-area="admin" asp-route-id="@contactBanner.Id" class="btn btn-primary mb-2">Update </a>
+                                                <a asp-action="delete" asp-controller="contact" asp-area="admin" asp-route-id="@contactBanner.Id" class="btn btn-danger mb-2">delete </a>
+                                                <a asp-action="details" asp-controller="contact" asp-area="admin" asp-route-id="@contactBanner.Id" class="btn btn-info">details </a>
+                                            </td>
+
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
