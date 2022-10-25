@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X8C27OHmIhlDUbP1or1c52EQFLo14iLC/nJoN3Sf0IM=",
+  "Hash": "U6ffHcCukPlQ0NtNBPhrwLu5eXLWbTRq0kKv0v+dMtw=",
   "Source": "front-to-back",
   "BasePath": "_content/front-to-back",
   "Mode": "Default",
@@ -1700,6 +1700,40 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\boxicons.woff2"
     },
     {
+      "Identity": "C:\\Users\\User\\Desktop\\Новая папка (2)\\front-to-back\\wwwroot\\assets\\img\\31b1383e-29e7-468c-a3ab-c250113f4a02_zamex-invoys.jpg",
+      "SourceId": "front-to-back",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Новая папка (2)\\front-to-back\\wwwroot\\",
+      "BasePath": "_content/front-to-back",
+      "RelativePath": "assets/img/31b1383e-29e7-468c-a3ab-c250113f4a02_zamex-invoys.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\31b1383e-29e7-468c-a3ab-c250113f4a02_zamex-invoys.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\Новая папка (2)\\front-to-back\\wwwroot\\assets\\img\\a7e0327f-8c4f-4090-aa18-ead24eb8cbb8_IMG_1150.jpg",
+      "SourceId": "front-to-back",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Новая папка (2)\\front-to-back\\wwwroot\\",
+      "BasePath": "_content/front-to-back",
+      "RelativePath": "assets/img/a7e0327f-8c4f-4090-aa18-ead24eb8cbb8_IMG_1150.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\a7e0327f-8c4f-4090-aa18-ead24eb8cbb8_IMG_1150.jpg"
+    },
+    {
       "Identity": "C:\\Users\\User\\Desktop\\Новая папка (2)\\front-to-back\\wwwroot\\assets\\img\\apple-icon.png",
       "SourceId": "front-to-back",
       "SourceType": "Discovered",
@@ -1800,6 +1834,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\banner-img-02.svg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\Новая папка (2)\\front-to-back\\wwwroot\\assets\\img\\c96e3a14-12f1-4c3c-87b7-8df13fa9114d_zamex-invoys.jpg",
+      "SourceId": "front-to-back",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Новая папка (2)\\front-to-back\\wwwroot\\",
+      "BasePath": "_content/front-to-back",
+      "RelativePath": "assets/img/c96e3a14-12f1-4c3c-87b7-8df13fa9114d_zamex-invoys.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\c96e3a14-12f1-4c3c-87b7-8df13fa9114d_zamex-invoys.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\Новая папка (2)\\front-to-back\\wwwroot\\assets\\img\\favicon.ico",

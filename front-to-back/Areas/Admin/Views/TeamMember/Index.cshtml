@@ -1,4 +1,4 @@
-﻿@using front_to_back.Areas.Admin.ViewModels
+﻿@using front_to_back.Areas.Admin.ViewModels.TeamMember
 @model TeamMemberIndexViewModel
 
 
@@ -34,8 +34,8 @@
                                             <td>@teamMember.Position</td>
                                             <td>
                                                 <a asp-action="update" asp-controller="teammember" asp-area="admin" asp-route-id="@teamMember.Id" class="btn btn-primary">Update </a>
-                                                <a asp-action="delete" asp-controller="teammember" asp-area="admin" asp-route-id="@teamMember.Id" class="btn btn-danger">delete </a>
                                                 <a asp-action="details" asp-controller="teammember" asp-area="admin" asp-route-id="@teamMember.Id" class="btn btn-info">details </a>
+                                                <a asp-action="delete" asp-controller="teammember" asp-area="admin" asp-route-id="@teamMember.Id" class="btn btn-danger">delete </a>
                                             </td>
 
                                         </tr>

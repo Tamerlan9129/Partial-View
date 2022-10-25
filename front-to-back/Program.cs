@@ -1,4 +1,5 @@
 using front_to_back.DAL;
+using front_to_back.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 #region Builder
@@ -6,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSingleton<IFilService,FileService>();
 var connectionString = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(connectionString));
 

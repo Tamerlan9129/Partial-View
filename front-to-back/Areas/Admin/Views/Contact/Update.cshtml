@@ -1,0 +1,52 @@
+﻿@using front_to_back.Areas.Admin.ViewModels.ContactBanner
+@model BannerUpdateViewModel
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+
+                        <p class="card-description">
+                            Update Contact Banner
+                        </p>
+                        <form enctype="multipart/form-data" method="post" asp-action="update" asp-controller="contact" asp-area="admin" class="forms-sample">
+                            <input type="hidden" asp-for="PhotoPath" />
+                            <div class="form-group">
+                                <label asp-for="Name">Name</label>
+                                <input class="form-control" asp-for="Name">
+                                <span class="text-danger" asp-validation-for="Name"> </span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Title">Title</label>
+                                <input class="form-control" asp-for="Title">
+                                <span class="text-danger" asp-validation-for="Title"> </span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Description">Position</label>
+                                <input class="form-control" asp-for="Description">
+                                <span class="text-danger" asp-validation-for="Description"> </span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Photo">Photo</label>
+                                <img style="width:200px;height:200px;border-radius:50%;" src="~/assets/img/@Model.PhotoPath" />
+                                <input class="form-control" asp-for="Photo" />
+                                <span class="text-danger" asp-validation-for="Photo"> </span>
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-primary me-2">Submit</button>
+                            <button class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

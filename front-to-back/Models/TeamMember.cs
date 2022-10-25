@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace front_to_back.Models
 {
@@ -11,6 +12,7 @@ namespace front_to_back.Models
         public string? PhotoName { get; set; }
 
         [NotMapped]
+        [Required]
         public IFormFile Photo { get; set; }   
 
 

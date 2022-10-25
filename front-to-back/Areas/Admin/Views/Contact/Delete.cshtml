@@ -1,0 +1,42 @@
+﻿@using front_to_back.Models
+@model ContactBanner
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+
+                        <p class="card-description">
+                            Delete Team Member
+                        </p>
+                        <span>Name:</span>
+                        <span>@Model.Name</span>
+                        <br />
+                        <br />
+                        <span>Surname</span>
+                        <span>@Model.Title</span>
+                        <br />
+                        <br />
+                        <span>Position</span>
+                        <span>@Model.Description</span>
+                        <br />
+                        <span>Photo</span>
+                        <img style="width:200 px; height: 200px; border-radius:10px;" src="~/assets/img/@Model.PhotoPath" />
+
+                        <form method="post" asp-action="deletecomponent" asp-area="admin" asp-controller="contact" asp-route-id=@Model.Id>
+                            <button onclick="confirm('Are you sure?')" class="btn btn-danger">Delete</button>
+                            <button class="btn btn-warning" asp-action="index" asp-controller="contact" asp-area="admin">Cancel</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

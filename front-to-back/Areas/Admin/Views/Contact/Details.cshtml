@@ -1,0 +1,39 @@
+﻿@using front_to_back.Models
+@model ContactBanner
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+
+                        <p class="card-description">
+                            Details
+                        </p>
+                        <span>Title:</span>
+                        <span>@Model.Name</span>
+                        <br />
+                        <br />
+                        <span>Text</span>
+                        <span>@Model.Title</span>
+                        <br />
+                        <br />
+                        <span>FilePath</span>
+                        <span>@Model.Description</span>
+                        <br />
+                        <span>Photo</span>
+                        <img style="width:200 px; height: 200px; border-radius:10px;" src="~/assets/img/@Model.PhotoPath" />
+
+                        <a class="btn btn-warning" asp-action="index" asp-controller="contact" asp-area="admin">Cancel</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
