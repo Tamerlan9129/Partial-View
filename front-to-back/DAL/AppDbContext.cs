@@ -20,5 +20,9 @@ namespace front_to_back.DAL
         public DbSet<ObjectiveComponent> ObjectiveComponents { get; set; }
 
         public DbSet <TeamMember> TeamMembers { get; set; }
+
+        public DbSet <FeaturedWorkComponent> FeaturedWorkComponent { get; set; }
+
+        public DbSet <FeaturedWorkComponentPhoto> FeaturedWorkComponentPhotos { get; set; }
     }
 }
